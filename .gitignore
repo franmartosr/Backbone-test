@@ -1,0 +1,5 @@
+#gulp plugins folder
+node_modules/
+
+#Plain text file with things I want to do
+/TODO.txt
