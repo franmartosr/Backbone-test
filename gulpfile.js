@@ -10,7 +10,7 @@ var gulp = require('gulp'),
     markdownToHTML = require('gulp-markdown');
 
 //Variables auxiliares
-var jsToWatch = ['src/*.js', '!src/all.js'];
+var jsToWatch = ['src/*.js', '!src/**/*.min.js'];
 
 //Tarea 'lint'. Lintea solo los archivos HTML.
 gulp.task('lint', function() {
