@@ -9,6 +9,8 @@ Small app for learning purposes only. Things you can do:
 Tools used:
 --------------
 * [Backbone](http://backbonejs.org/)
+* [Backbone-forms](https://github.com/powmedia/backbone-forms)
+* [Backbone.localStorage](http://backbonejs.org/docs/backbone.localStorage.html)
 * [Underscore](http://underscorejs.org/)
 * [JQuery](https://jquery.com/)
 * [Bootstrap](http://getbootstrap.com/)
