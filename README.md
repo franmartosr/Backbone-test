@@ -1,5 +1,6 @@
 # Backbone-test
 ===================
+
 Small app for learning purposes only. Things you can do:
 * Create a list of people and save it in your browser LocalStorage.
 * Edit his name, age, town, born date, sex and civil status.
