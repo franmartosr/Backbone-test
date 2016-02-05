@@ -29,6 +29,17 @@ var Personas=Backbone.Collection.extend({
 });
 //Configuramos la vista de la colección con sus eventos.
 var collectionView=Backbone.View.extend({
+	/**
+	 * @function
+	 * @author Francisco Martos Roa
+	 * @name initialize
+	 * @example Code example
+	 * @license License example
+	 * @since 27/03/2014
+	 * @description Initialize collection listeners, fetch it and render the view.
+	 * @param {Object} param1 Parametro de prueba 1.
+	 * @param {String} param2 Parametro de prueba 2.
+	 */
 	initialize: function(){
 		this.listenTo(this.collection, 'add', this.filaNueva);
 		this.listenTo(this.collection, 'destroy', this.vacio);
@@ -87,6 +98,16 @@ var formulario=Backbone.Form.extend({
 		'click input[name=sexo]':  'cambioSexo',
 		'click #guarda': 'guarda'
 	},
+	/**
+	 * @function
+	 * @author Francisco Martos Roa
+	 * @name cambioSexo
+	 * @example Code example
+	 * @license License example
+	 * @since 30/03/2014
+	 * @description Cambia el 'select' de Estado Civil dependiendo del 'radio' sexo.
+	 * @param {Object} e Event triggered.
+	 */
 	cambioSexo: function(e){
 		var cambia=sexo[e.currentTarget.value];
 		this.fields.estadoCivil.editor.setOptions(cambia);
