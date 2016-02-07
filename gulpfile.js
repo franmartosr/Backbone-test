@@ -5,6 +5,8 @@ var gulp = require('gulp'),
     eslint = require('gulp-eslint'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
+    sass = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
     todo = require('gulp-todo'),
     jsdoc = require('gulp-jsdoc-to-markdown'),
     markdownToHTML = require('gulp-markdown');
@@ -41,10 +43,18 @@ gulp.task('jsDoc', ['minificarJS'], function() {
     .pipe(markdownToHTML())
     .pipe(gulp.dest('./docs/'));
 });
+//Tarea 'styles'. Compila los archivos SASS a CSS.
+gulp.task('styles', function () {
+  gulp.src('./css/scss/**/*.scss')
+    .pipe(autoprefixer())
+    .pipe(sass({outputStyle: 'compressed'}))
+    .pipe(gulp.dest('./css/'));
+});
 
 //Vigilante, al hacerlo como una tarea, no ejecuta nada por defecto al abrir.
 gulp.task('watch', function() {
   gulp.watch(jsToWatch, ['minificarJS', 'jsDoc', 'todo']).on('end', function(){
     console.log('-------Compilation successful-------');
   });
+  gulp.watch('./css/scss/**/*.scss', ['styles']);
 });
