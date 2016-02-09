@@ -39,7 +39,7 @@ var collectionView=Backbone.View.extend({
 	 * @example Code example
 	 * @license License example
 	 * @since 27/03/2014
-	 * @description Initialize collection listeners, fetch it and render the view.
+	 * @description Initialize the view fetching the collection and creating event listeners.
 	 * @param {Object} param1 Parametro de prueba 1.
 	 * @param {String} param2 Parametro de prueba 2.
 	 */
