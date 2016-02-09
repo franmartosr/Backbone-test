@@ -8,13 +8,16 @@ body {
   padding: 0px 25px;
   table {
     width: 100%;
+    margin-bottom: 5px;
     th, td {
       border: 1px solid black;
       &:first-child {
         width: 125px;
       }
       &:nth-child(2) {
-        width: 40px;
+        width: 75px;
+        padding-left: 0;
+        text-align: center;
       }
     }
     th {
