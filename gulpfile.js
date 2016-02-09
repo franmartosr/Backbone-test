@@ -1,4 +1,4 @@
-'use strict'
+﻿'use strict'
 
 //Dependencias
 var gulp = require('gulp'),
@@ -17,8 +17,8 @@ var jsToWatch = ['src/*.js', '!src/**/*.min.js'];
 //Tarea 'lint'. Lintea solo los archivos HTML.
 gulp.task('lint', function() {
   return gulp.src(jsToWatch)
-  .pipe(eslint())
-  .pipe(eslint.format());
+    .pipe(eslint())
+    .pipe(eslint.format());
 });
 /*Tarea 'minificarJS'. Concat evita la compresión
   de la fuente y/o el problema del bucle infinito.*/
