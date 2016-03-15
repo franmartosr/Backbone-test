@@ -14,13 +14,7 @@ var utils = require('./gulp/utils');
 
 gulp.task('esLint', require('./gulp/linterns/esLint'));
 gulp.task('minifyJS', require('./gulp/tasks/minifyJS'));
-//Tarea 'todo'. Lista los todo en un archivo HTML.
-gulp.task('todo', function() {
-  return gulp.src(utils.src.js)
-    .pipe(todo())
-    .pipe(markdownToHTML())
-    .pipe(gulp.dest(utils.dest.docs));
-});
+gulp.task('todo', require('./gulp/tasks/todo'));
 //Tarea 'jsDoc'. Crea una documentacion HTML de todas las funciones.
 gulp.task('jsDoc', function() {
   return gulp.src(utils.src.js)
