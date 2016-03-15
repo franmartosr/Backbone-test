@@ -2,7 +2,6 @@
 
 //Dependencias
 var gulp = require('gulp');
-var eslint = require('gulp-eslint');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
@@ -10,17 +9,11 @@ var autoprefixer = require('gulp-autoprefixer');
 var todo = require('gulp-todo');
 var jsdoc = require('gulp-jsdoc-to-markdown');
 var markdownToHTML = require('gulp-markdown');
-var runSequence = require('run-sequence');
 
 //Variables auxiliares
 var jsToWatch = ['src/*.js', '!src/**/*.min.js'];
 
-//Tarea 'lint'. Lintea solo los archivos HTML.
-gulp.task('esLint', function() {
-  return gulp.src(jsToWatch)
-    .pipe(eslint())
-    .pipe(eslint.format());
-});
+gulp.task('esLint', require('./gulp/linterns/esLint'));
 /*Tarea 'minificarJS'. Concat evita la compresión
   de la fuente y/o el problema del bucle infinito.*/
 gulp.task('minificarJS', function () {
