@@ -11,7 +11,7 @@ var watchProps = {
 //Vigilante, al hacerlo como una tarea, no ejecuta nada por defecto al abrir.
 module.exports = function() {
   gulp.watch(utils.src.js, watchProps, function(file) {
-    return runSequence('esLint', 'minificarJS', 'jsDoc', 'todo');
+    return runSequence('esLint', 'minifyJS', 'jsDoc', 'todo');
   });
   gulp.watch(utils.src.scss, watchProps, ['sass']);
 };

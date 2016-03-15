@@ -13,14 +13,7 @@ var markdownToHTML = require('gulp-markdown');
 var utils = require('./gulp/utils');
 
 gulp.task('esLint', require('./gulp/linterns/esLint'));
-/*Tarea 'minificarJS'. Concat evita la compresión
-  de la fuente y/o el problema del bucle infinito.*/
-gulp.task('minificarJS', function () {
-  return gulp.src(utils.src.js)
-    .pipe(concat('all.min.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest(utils.dest.src));
-});
+gulp.task('minifyJS', require('./gulp/tasks/minifyJS'));
 //Tarea 'todo'. Lista los todo en un archivo HTML.
 gulp.task('todo', function() {
   return gulp.src(utils.src.js)
