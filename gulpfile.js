@@ -10,39 +10,38 @@ var todo = require('gulp-todo');
 var jsdoc = require('gulp-jsdoc-to-markdown');
 var markdownToHTML = require('gulp-markdown');
 
-//Variables auxiliares
-var jsToWatch = ['src/*.js', '!src/**/*.min.js'];
+var utils = require('./gulp/utils');
 
 gulp.task('esLint', require('./gulp/linterns/esLint'));
 /*Tarea 'minificarJS'. Concat evita la compresión
   de la fuente y/o el problema del bucle infinito.*/
 gulp.task('minificarJS', function () {
-  return gulp.src(jsToWatch)
+  return gulp.src(utils.src.js)
     .pipe(concat('all.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('src'));
+    .pipe(gulp.dest(utils.dest.src));
 });
 //Tarea 'todo'. Lista los todo en un archivo HTML.
 gulp.task('todo', function() {
-  return gulp.src(jsToWatch)
+  return gulp.src(utils.src.js)
     .pipe(todo())
     .pipe(markdownToHTML())
-    .pipe(gulp.dest('./docs/'));
+    .pipe(gulp.dest(utils.dest.docs));
 });
 //Tarea 'jsDoc'. Crea una documentacion HTML de todas las funciones.
 gulp.task('jsDoc', function() {
-  return gulp.src(jsToWatch)
+  return gulp.src(utils.src.js)
     .pipe(concat('jsdoc.md'))
     .pipe(jsdoc())
     .pipe(markdownToHTML())
-    .pipe(gulp.dest('./docs/'));
+    .pipe(gulp.dest(utils.dest.docs));
 });
 //Tarea 'styles'. Compila los archivos SASS a CSS.
 gulp.task('styles', function () {
-  gulp.src('./css/scss/**/*.scss')
+  gulp.src(utils.src.scss)
     .pipe(autoprefixer())
     .pipe(sass({outputStyle: 'compressed'}))
-    .pipe(gulp.dest('./css/'));
+    .pipe(gulp.dest(utils.dest.css));
 });
 
 /*********************WATCHERS*********************/

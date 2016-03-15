@@ -2,11 +2,11 @@
 
 var gulp = require('gulp');
 var eslint = require('gulp-eslint');
-var jsToWatch = ['src/*.js', '!src/**/*.min.js'];
+var utils = require('../utils');
 
 //Tarea 'lint'. Lintea solo los archivos HTML.
 module.exports = function() {
-  return gulp.src(jsToWatch)
+  return gulp.src(utils.src.js)
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());
