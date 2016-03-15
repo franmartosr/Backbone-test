@@ -36,13 +36,7 @@ gulp.task('jsDoc', function() {
     .pipe(markdownToHTML())
     .pipe(gulp.dest(utils.dest.docs));
 });
-//Tarea 'styles'. Compila los archivos SASS a CSS.
-gulp.task('styles', function () {
-  gulp.src(utils.src.scss)
-    .pipe(autoprefixer())
-    .pipe(sass({outputStyle: 'compressed'}))
-    .pipe(gulp.dest(utils.dest.css));
-});
+gulp.task('sass', require('./gulp/tasks/sass'));
 
 /*********************WATCHERS*********************/
 gulp.task('watch', require('./gulp/watchers'));
