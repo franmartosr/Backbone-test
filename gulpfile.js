@@ -16,7 +16,7 @@ var runSequence = require('run-sequence');
 var jsToWatch = ['src/*.js', '!src/**/*.min.js'];
 
 //Tarea 'lint'. Lintea solo los archivos HTML.
-gulp.task('lint', function() {
+gulp.task('esLint', function() {
   return gulp.src(jsToWatch)
     .pipe(eslint())
     .pipe(eslint.format());
