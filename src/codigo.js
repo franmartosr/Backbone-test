@@ -91,7 +91,7 @@ var formulario=Backbone.Form.extend({
 	schema:{
 		id: {type: 'Text', editorAttrs:{disabled: true}},
 		nombre: {type: 'Text', editorAttrs:{placeholder: 'Hola'}},
-		edad: 'Number',
+		edad: {type: 'Number', editorAttrs:{min: '0', max: '125', onkeydown: 'return false'}},
 		localidad: 'Text',
 		fechaNacimiento: 'Date',
 		sexo: {type: 'Radio', options: ['Hombre', 'Mujer']},
