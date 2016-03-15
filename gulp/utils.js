@@ -3,6 +3,7 @@
 module.exports = {
   src: {
     js: ['src/*.js', '!src/**/*.min.js'],
+    json: ['package.json'],
     scss: ['css/scss/**/*.scss']
   },
   dest: {

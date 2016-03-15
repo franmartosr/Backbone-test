@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 
 gulp.task('esLint', require('./gulp/linterns/esLint'));
+gulp.task('jsonLint', require('./gulp/linterns/jsonLint'));
 gulp.task('minifyJS', require('./gulp/tasks/minifyJS'));
 gulp.task('todo', require('./gulp/tasks/todo'));
 gulp.task('jsDoc', require('./gulp/tasks/jsDoc'));

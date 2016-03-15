@@ -13,5 +13,6 @@ module.exports = function() {
   gulp.watch(utils.src.js, watchProps, function(file) {
     return runSequence('esLint', 'minifyJS', 'jsDoc', 'todo');
   });
+  gulp.watch(utils.src.json, watchProps, ['jsonLint']);
   gulp.watch(utils.src.scss, watchProps, ['sass']);
 };
