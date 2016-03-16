@@ -2,13 +2,13 @@
 
 module.exports = {
   src: {
-    js: ['src/*.js', '!src/**/*.min.js'],
+    js: ['src/js/*.js'],
     json: ['package.json'],
-    scss: ['css/scss/**/*.scss']
+    scss: ['src/scss/**/*.scss']
   },
   dest: {
-    css: './css',
-    docs: './docs',
-    src: './src'
+    css: './dist/css',
+    docs: './dist/docs',
+    src: './dist/js'
   }
 };
