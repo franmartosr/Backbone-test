@@ -1,11 +1,9 @@
 ﻿'use strict'
+let gulp = require('gulp');
+let eslint = require('gulp-eslint');
+let utils = require('../utils');
 
-var gulp = require('gulp');
-var eslint = require('gulp-eslint');
-var utils = require('../utils');
-
-//Tarea 'lint'. Lintea solo los archivos HTML.
-module.exports = function() {
+module.exports = () => {
   return gulp.src(utils.src.js)
     .pipe(eslint())
     .pipe(eslint.format())

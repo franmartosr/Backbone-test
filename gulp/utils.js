@@ -1,5 +1,4 @@
 ﻿'use strict'
-
 module.exports = {
   src: {
     js: ['src/js/*.js'],

@@ -1,11 +1,9 @@
 ﻿'use strict'
+let gulp = require('gulp');
+let jsonLint = require('gulp-jsonlint');
+let utils = require('../utils');
 
-var gulp = require('gulp');
-var jsonLint = require('gulp-jsonlint');
-var utils = require('../utils');
-
-//Tarea 'lint'. Lintea solo los archivos HTML.
-module.exports = function() {
+module.exports = () => {
   return gulp.src(utils.src.json)
     .pipe(jsonLint())
     .pipe(jsonLint.reporter())

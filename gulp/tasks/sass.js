@@ -1,11 +1,10 @@
 ﻿'use strict'
+let gulp = require('gulp');
+let sass = require('gulp-sass');
+let autoprefixer = require('gulp-autoprefixer');
+let utils = require('../utils');
 
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var utils = require('../utils');
-
-module.exports = function() {
+module.exports = () => {
   return gulp.src(utils.src.scss)
     .pipe(autoprefixer())
     .pipe(sass({outputStyle: 'compressed'}))
