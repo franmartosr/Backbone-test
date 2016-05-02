@@ -2,15 +2,18 @@
   routes: {
     'formu': 'formu',
     'nueva': 'nueva',
-    'tabla': 'tabla'//,
-    // '*notFound': 'error'
+    'tabla': 'tabla'
   },
   initialize: function() {
     this.listenTo(Backbone.history, 'routeNotFound', this.error);
   },
-  //TODO: Show modal window error.
+  //TODO: Change alert with modal window.
   error: function() {
-    alert('Page not found!');
+    if (location.hash === '') {
+      inicio();
+    } else {
+      alert('Page not found!');
+    }
   },
   //Show add new person form
   formu: function() {
