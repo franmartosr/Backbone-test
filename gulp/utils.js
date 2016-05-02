@@ -1,13 +1,18 @@
 ﻿'use strict'
+const jsPaths = [
+  'src/js/models.js', 'src/js/collections.js', 'src/js/views.js',
+  'src/js/!(init)*.js', 'src/js/init.js'
+];
+
 module.exports = {
   src: {
-    js: ['src/js/*.js'],
-    json: ['package.json'],
+    js: jsPaths,
+    json: ['package.json', 'src/json/*.json'],
     scss: ['src/scss/**/*.scss']
   },
   dest: {
     css: './dist/css',
     docs: './dist/docs',
-    src: './dist/js'
+    js: './dist/js'
   }
 };
