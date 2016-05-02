@@ -7,7 +7,7 @@ gulp.task('jsonLint', require('./gulp/linterns/jsonLint'));
 /********************END LINTERNS*******************/
 
 /***********************TASKS***********************/
-gulp.task('minifyJS', require('./gulp/tasks/minifyJS'));
+gulp.task('scripts', require('./gulp/tasks/scripts'));
 gulp.task('sass', require('./gulp/tasks/sass'));
 /*********************END TASKS*********************/
 

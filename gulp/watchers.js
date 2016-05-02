@@ -9,7 +9,7 @@ const watchProps = {
 
 module.exports = () => {
   gulp.watch(utils.src.js, watchProps, (file) => {
-    return runSequence('esLint', 'minifyJS', 'jsDoc', 'todo');
+    return runSequence('esLint', 'scripts', 'jsDoc', 'todo');
   });
   gulp.watch(utils.src.json, watchProps, ['jsonLint']);
   gulp.watch(utils.src.scss, watchProps, ['sass']);
