@@ -14,7 +14,6 @@
     "gulp-jsdoc-to-markdown": "^1.2.1",
     "gulp-jsonlint": "^1.1.2",
     "gulp-markdown": "^1.2.0",
-    "gulp-minify-css": "^1.2.3",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.2.0",
     "gulp-todo": "^4.1.0",
